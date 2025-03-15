@@ -47,11 +47,3 @@ Wskazówki
 - Regularne korzystanie z wagi pomoże Ci monitorować zmiany wagi oraz śledzić postępy w czasie.
 - Kontakt
 
-Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące użytkowania wagi, skontaktuj się z naszym zespołem wsparcia technicznego:
-
-- Email: support@inteligentnawaga.pl
-- Telefon: +48 123 456 789
-
-Uwagi prawne
-- Waga przeznaczona wyłącznie do użytku domowego.
-- Firma nie ponosi odpowiedzialności za uszkodzenia spowodowane nieprawidłowym użytkowaniem urządzenia.

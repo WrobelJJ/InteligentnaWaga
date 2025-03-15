@@ -1,4 +1,5 @@
-README - Inteligentna Waga
+Inteligentna Waga
+
 Opis
 Inteligentna waga to nowoczesne urządzenie, które umożliwia pomiar wagi ciała. Waga jest bezprzewodowa i współpracuje z aplikacją mobilną, dzięki czemu wyniki pomiaru są natychmiastowo wyświetlane na ekranie telefonu. Jest zaprojektowana z myślą o pomiarach wyłącznie dla ludzi, zapewniając dokładność oraz komfort użytkowania.
 

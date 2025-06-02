@@ -1,2 +1,0 @@
-penisdada aa
-dgd

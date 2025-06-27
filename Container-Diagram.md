@@ -18,5 +18,3 @@ C4Container
     Rel(frontend, backend, "Pobiera dane", "HTTP GET /api/measurements/{user_id}")
     Rel(simulator, backend, "Wysyła pomiary", "HTTP POST /api/measurements")
     Rel(backend, azure_blob, "Zapisuje/odczytuje dane", "Azure SDK")
-
-    %% Layout - Mermaid handles this automatically, so UpdateLayoutConfig is not needed.

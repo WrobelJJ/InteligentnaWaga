@@ -2,22 +2,16 @@
 
 ### C4 Context Diagram
 ```mermaid
-C4Container
-    title Smart Scale System - Container Diagram
+C4Context
+    title Smart Scale System - Context Diagram
     
-    Person(user, "Użytkownik", "Osoba chcąca sprawdzić historię pomiarów")
+    Person(user, "Użytkownik", "Osoba korzystająca z inteligentnej wagi, chce monitorować swoje pomiary")
     
-    System_Boundary(smartscale, "Smart Scale System") {
-        Container(frontend, "Frontend Web App", "HTML/CSS/JavaScript", "Interfejs użytkownika do przeglądania historii pomiarów")
-        Container(backend, "Backend API", "FastAPI/Python", "Obsługuje żądania HTTP, zarządza danymi pomiarowymi")
-        Container(simulator, "Data Simulator", "Python/Requests", "Symuluje dane z inteligentnej wagi")
-    }
+    System(smartscale, "Smart Scale System", "System do zarządzania danymi z inteligentnej wagi - zbiera, przechowuje i wyświetla pomiary wagi, tkanki tłuszczowej i zawartości wody")
     
-    System_Ext(azure_blob, "Azure Blob Storage", "Przechowuje dane pomiarowe w plikach JSON")
+    System_Ext(azure_storage, "Azure Blob Storage", "Usługa chmurowa Microsoft do przechowywania danych pomiarowych w postaci plików JSON")
     
-    Rel(user, frontend, "Używa", "HTTPS")
-    Rel(frontend, backend, "Pobiera dane", "HTTP GET /api/measurements/{user_id}")
-    Rel(simulator, backend, "Wysyła pomiary", "HTTP POST /api/measurements")
-    Rel(backend, azure_blob, "Zapisuje/odczytuje dane", "Azure SDK")
+    Rel(user, smartscale, "Przeglądanie historii pomiarów", "Web Browser")
+    Rel(smartscale, azure_storage, "Zapisuje i pobiera dane pomiarowe", "HTTPS/Azure SDK")
     
-    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")

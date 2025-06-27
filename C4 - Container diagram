@@ -1,0 +1,23 @@
+## Architektura Systemu
+
+### C4 Context Diagram
+```mermaid
+C4Container
+    title Smart Scale System - Container Diagram
+    
+    Person(user, "Użytkownik", "Osoba chcąca sprawdzić historię pomiarów")
+    
+    System_Boundary(smartscale, "Smart Scale System") {
+        Container(frontend, "Frontend Web App", "HTML/CSS/JavaScript", "Interfejs użytkownika do przeglądania historii pomiarów")
+        Container(backend, "Backend API", "FastAPI/Python", "Obsługuje żądania HTTP, zarządza danymi pomiarowymi")
+        Container(simulator, "Data Simulator", "Python/Requests", "Symuluje dane z inteligentnej wagi")
+    }
+    
+    System_Ext(azure_blob, "Azure Blob Storage", "Przechowuje dane pomiarowe w plikach JSON")
+    
+    Rel(user, frontend, "Używa", "HTTPS")
+    Rel(frontend, backend, "Pobiera dane", "HTTP GET /api/measurements/{user_id}")
+    Rel(simulator, backend, "Wysyła pomiary", "HTTP POST /api/measurements")
+    Rel(backend, azure_blob, "Zapisuje/odczytuje dane", "Azure SDK")
+    
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
